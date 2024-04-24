@@ -28,10 +28,11 @@ FutureEvents.get('/', (c) => {
     return c.html(<EventListing  events={events}/>)
 })
 
-FutureEvents.get('/eventForm', (c) => {
-    return c.html(<AddEventForm/>)
-})
-FutureEvents.post('/eventForm', (c) => {
 
+FutureEvents.post('/', async (c) => {
+    const temp3 = await c.req.query()
+    const temp5 = await c.req.queries()
+    
+    console.log({temp3,temp5})
     return c.html(<h2>send off</h2>)
 })
