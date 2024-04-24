@@ -1,9 +1,9 @@
 import type { FC } from "hono/jsx";
-import { Event } from "@Types/index";
 import { Hono } from "hono";
 
-import { useState, useEffect } from "hono/jsx";
-import { render } from "hono/jsx/dom";
+import { useState } from 'hono/jsx'
+import { render } from 'hono/jsx/dom'
+
 
 import { html, raw } from "hono/html";
 
@@ -35,7 +35,7 @@ interface SiteData {
   children?: any;
 }
 
-export const ClientDate: FC = (props: { siteData: SiteData; name: string }) => {
+export const ClientDate: FC = () => {
   const currentDate = new Date();
     return (
     <Layout {...props.siteData}>
@@ -61,6 +61,9 @@ export const ClientDate: FC = (props: { siteData: SiteData; name: string }) => {
   );
 };
 
+
+
+
 export const CurrentDate = new Hono();
 const props = {
   name: "World",
@@ -73,3 +76,39 @@ const props = {
 CurrentDate.get("/", (c) => {
   return c.html(<ClientDate {...props} />);
 });
+
+
+import { useState } from 'hono/jsx'
+import { render } from 'hono/jsx/dom'
+
+function Counter() {
+  const [count, setCount] = useState(0)
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  )
+}
+
+function App() {
+  return (
+    <html>
+      <body>
+        <Counter />
+      </body>
+    </html>
+  )
+}
+
+
+
+
+
+
+
+
+CurrentDate.get("/app", (c) => {
+    // const root = document.getElementById('root')
+    return c.render(<App />, root)
+  });

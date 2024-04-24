@@ -1,5 +1,5 @@
 import { Hono } from 'hono'
-import {EventListing} from './components'
+import {EventListing,AddEventForm} from './components'
 import {Event} from "@Types/index"
 
 const events: Event[] = [
@@ -20,6 +20,18 @@ const events: Event[] = [
 
 export const FutureEvents = new Hono()
 
+
+
+
+
 FutureEvents.get('/', (c) => {
     return c.html(<EventListing  events={events}/>)
+})
+
+FutureEvents.get('/eventForm', (c) => {
+    return c.html(<AddEventForm/>)
+})
+FutureEvents.post('/eventForm', (c) => {
+
+    return c.html(<h2>send off</h2>)
 })

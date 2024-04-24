@@ -14,6 +14,9 @@ importers:
       hono:
         specifier: ^4.2.5
         version: 4.2.5
+      htmx.org:
+        specifier: ^1.9.12
+        version: 1.9.12
     devDependencies:
       '@types/node':
         specifier: ^20.11.17
@@ -186,6 +189,9 @@ packages:
     resolution: {integrity: sha512-uonJD3i/yy005kQ7bPZRVfG3rejYJwyPqBmPoUGijS4UB/qM+YlrZ7xzSWy+ByDu9buGHUG+f+SKzz03Y6V1Kw==}
     engines: {node: '>=16.0.0'}
 
+  htmx.org@1.9.12:
+    resolution: {integrity: sha512-VZAohXyF7xPGS52IM8d1T1283y+X4D+Owf3qY1NZ9RuBypyu9l8cGsxUMAG5fEAb/DhT7rDoJ9Hpu5/HxFD3cw==}
+
   resolve-pkg-maps@1.0.0:
     resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
 
@@ -308,6 +314,8 @@ snapshots:
       resolve-pkg-maps: 1.0.0
 
   hono@4.2.5: {}
+
+  htmx.org@1.9.12: {}
 
   resolve-pkg-maps@1.0.0: {}
 
