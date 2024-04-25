@@ -1,7 +1,13 @@
+import { z } from "zod";
 
-export interface Event {
-    id: number;
-    title: string;
-    description: string;
-    date_of: Date; 
-}
+
+const eventSchema = z.object({
+    id: z.string(),
+    title: z.string(),
+    description: z.string().optional(),
+    date_of:  z.date()
+})
+type Event = z.infer<typeof eventSchema>
+
+
+export {Event,eventSchema}

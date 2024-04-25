@@ -24,9 +24,9 @@ export const AddEvent = () => {
     <div id="addEvent_form_container">
       <button
         hx-get="/future-events/eventForm"
-        hx-target="click"
-        hx-target="#addEvent_form_container"
-        hx-swap="outerHTML"
+        hx-target="#event_list_container"
+        // hx-swap="delete"
+        hx-trigger="click"
       >
         Add New Event
       </button>

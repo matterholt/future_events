@@ -1,5 +1,5 @@
 import type { FC } from "hono/jsx";
-import { Event } from "@Types/index";
+import { Event ,eventSchema} from "@Types/index";
 
 import { AddEvent ,AddEventForm} from "./";
 
