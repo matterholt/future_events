@@ -4,6 +4,8 @@ import { Event ,eventSchema} from "@Types/index";
 
 import { v4 as uuidv4 } from 'uuid';
 
+import { serveStatic } from '@hono/node-server/serve-static'
+
 
 
 
@@ -26,6 +28,7 @@ const events: Event[] = [
 ];
 
 export const FutureEvents = new Hono()
+FutureEvents.use('/CurrentDate.js', serveStatic({ root: './public/components_web/CurrentDate.js' }))
 
 
 

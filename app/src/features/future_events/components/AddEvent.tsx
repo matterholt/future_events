@@ -11,8 +11,6 @@ export const AddEventForm = () => {
 
         <input type="submit" value="Submit" form="main_form"/>
         
-
-
       </form>
       
     </div>
