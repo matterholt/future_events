@@ -1,5 +1,5 @@
 import { Hono } from 'hono'
-import {EventListing,AddEventForm} from './components'
+import {EventListing,AddEventForm,EventLineItem} from './components'
 import { Event ,eventSchema} from "@Types/index";
 
 import { v4 as uuidv4 } from 'uuid';
@@ -51,5 +51,5 @@ FutureEvents.post('/', async (c) => {
     console.log(eventSchema.safeParse(incomingData))
 
 
-    return c.html(<EventListing  events={events}/>)
+    return c.html(<EventLineItem  events={events}/>)
 })

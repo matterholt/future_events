@@ -2,7 +2,10 @@ export const AddEventForm = () => {
   return (
     <div id="addEvent_form_container">
     <h2>Submit new event</h2>
-      <form id="main_form" hx-post="/future-events" hx-trigger="submit">
+      <form id="main_form" 
+
+        hx-target="#event_list_container"
+         hx-post="/future-events" hx-trigger="submit">
         <label for="eventTitle">Event Title:</label><br/>
         <input type="text" id="eventTitle" name="eventTitle"/><br/>
 
@@ -20,10 +23,11 @@ export const AddEventForm = () => {
 export const AddEvent = () => {
   return (
     <div id="addEvent_form_container">
+
       <button
         hx-get="/future-events/eventForm"
-        hx-target="#event_list_container"
-        // hx-swap="delete"
+        hx-target="#event_list_container-template"
+        hx-swap="delete"
         hx-trigger="click"
       >
         Add New Event
